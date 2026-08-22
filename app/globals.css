@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-space-grotesk: "Space Grotesk", sans-serif;
+    --font-satoshi: "Satoshi", "Inter", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-obsidian text-ice font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-ice tracking-tight;
+  }
+
+  ::selection {
+    background: #19D3C5;
+    color: #080B10;
+  }
+
+  a, button {
+    @apply outline-none;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid #19D3C5;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .signal-grid-bg {
+    background-color: #080B10;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(25, 211, 197, 0.06) 0px,
+      rgba(25, 211, 197, 0.06) 1px,
+      transparent 1px,
+      transparent 56px
+    );
+  }
+
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.2em] text-cyan font-display font-medium;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm bg-cyan px-6 py-3
+    text-sm font-display font-semibold uppercase tracking-wide text-obsidian
+    transition-colors duration-200 hover:bg-cyan-hover;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm border border-steel
+    bg-transparent px-6 py-3 text-sm font-display font-semibold uppercase tracking-wide
+    text-ice transition-colors duration-200 hover:border-cyan hover:text-cyan;
+  }
+
+  .card-surface {
+    @apply rounded-sm border border-steel bg-carbon;
+  }
+
+  .container-qv {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-10;
+  }
+}
