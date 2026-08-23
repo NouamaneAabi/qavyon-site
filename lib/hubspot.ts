@@ -43,3 +43,12 @@ export async function submitLead(lead: Lead): Promise<{ delivered: boolean; queu
     return { delivered: false, queued: false };
   }
 }
+export interface Lead {
+  firstName: string;
+  email: string;
+  company?: string;
+  consent: boolean;
+  source: string; // e.g. "quickscan", "book", "content_download"
+  createdAt?: string; // <--- AJOUTE CETTE LIGNE
+  meta?: Record<string, unknown>;
+}
