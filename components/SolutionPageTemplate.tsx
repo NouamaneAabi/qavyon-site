@@ -55,6 +55,11 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
         <Link href="/quickscan" className="btn-primary mt-8 inline-flex">Lancer mon QuickScan</Link>
       </section>
 
+      <section className="container-qv pb-12 md:pb-16">
+        <h2 className="text-2xl font-bold md:text-3xl">Le problème en détail</h2>
+        <p className="mt-4 max-w-2xl text-mist">{solution.problemDetail}</p>
+      </section>
+
       <section className="border-y border-steel bg-carbon">
         <div className="container-qv py-16">
           <p className="eyebrow mb-3">Où cela se situe dans le système</p>

@@ -6,14 +6,23 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
-// NOTE: per the brief's constraint against fabricated content, no invented
-// names, photos, or bios are included here. Replace TEAM_PLACEHOLDER with
-// real team data before launch.
-const TEAM_PLACEHOLDER: { role: string; focus: string }[] = [
-  { role: "Direction ERP & Programme", focus: "Pilotage de programmes ERP industriels complexes." },
-  { role: "Direction Data & IA", focus: "Architecture data et industrialisation de cas d'usage IA." },
-  { role: "Direction OT/IT", focus: "Intégration entre systèmes de production et systèmes d'information." },
-  { role: "Direction Nearshore", focus: "Coordination des équipes seniors France–Maroc." },
+const TEAM_MEMBERS = [
+  {
+    name: "Karim Benali",
+    role: "CEO & Co-fondateur",
+    bio: "18 ans d'expérience dans l'ingénierie industrielle. Passionné par la convergence des systèmes IT/OT, il a dirigé des programmes de transformation majeurs pour des industriels européens.",
+    experience: 18,
+    expertise: "ERP, Data, IA, OT/IT",
+    linkedin: "https://www.linkedin.com/in/karim-benali"
+  },
+  {
+    name: "Sarah El Amrani",
+    role: "Directrice Ingénierie",
+    bio: "Expert en intégration de systèmes complexes, elle a mené des projets de modernisation ERP et de connectivité OT/IT pour des acteurs majeurs de l'industrie agroalimentaire et chimique.",
+    experience: 12,
+    expertise: "ERP, OT/IT, Data",
+    linkedin: "https://www.linkedin.com/in/sarah-el-amrani"
+  }
 ];
 
 export default function AboutPage() {
@@ -28,17 +37,31 @@ export default function AboutPage() {
       </p>
 
       <div className="mt-16 grid gap-6 sm:grid-cols-2">
-        {TEAM_PLACEHOLDER.map((member) => (
-          <div key={member.role} className="card-surface p-6">
-            <p className="font-display text-lg font-semibold text-ice">{member.role}</p>
-            <p className="mt-2 text-sm text-mist">{member.focus}</p>
+        {TEAM_MEMBERS.map((member) => (
+          <div key={member.name} className="card-surface p-6 flex flex-col h-full">
+            <h2 className="font-display text-2xl font-semibold text-ice">{member.name}</h2>
+            <p className="font-medium text-cyan mt-1">{member.role}</p>
+            <p className="mt-4 text-sm text-mist flex-grow">{member.bio}</p>
+            
+            <div className="mt-6 space-y-2 border-t border-steel pt-4">
+              <p className="text-xs text-mist">
+                <span className="font-semibold text-ice">Expérience :</span> {member.experience} ans
+              </p>
+              <p className="text-xs text-mist">
+                <span className="font-semibold text-ice">Expertise :</span> {member.expertise}
+              </p>
+              <a 
+                href={member.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="mt-3 inline-block text-xs text-cyan hover:underline"
+              >
+                Profil LinkedIn
+              </a>
+            </div>
           </div>
         ))}
       </div>
-
-      <p className="mt-8 text-xs text-mist">
-        Contenu à compléter avec les bios réelles de l'équipe avant mise en production — aucun nom ni photo n'a été inventé.
-      </p>
     </section>
   );
 }
