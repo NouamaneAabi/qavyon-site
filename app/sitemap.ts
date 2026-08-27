@@ -1,39 +1,62 @@
-import type { MetadataRoute } from "next";
+import { MetadataRoute } from "next";
 import { SOLUTIONS_LIST } from "@/lib/solutions-data";
 import { INSIGHTS } from "@/lib/insights-data";
 
-const BASE_URL = "https://qavyon.com";
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = [
-    "",
-    "/what-we-solve",
-    "/system",
-    "/insights",
-    "/about",
-    "/how-we-work",
-    "/quickscan",
-    "/book",
-  ].map((path) => ({
-    url: `${BASE_URL}${path}`,
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://qavyon.com";
+
+  const routes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/quickscan`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/book`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/insights`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/system`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+  ];
+
+  const solutions = SOLUTIONS_LIST.map((sol) => ({
+    url: `${baseUrl}/what-we-solve/${sol.slug}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: path === "" ? 1 : 0.8,
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
   }));
 
-  const solutionRoutes = SOLUTIONS_LIST.map((s) => ({
-    url: `${BASE_URL}/what-we-solve/${s.slug}`,
-    lastModified: new Date(),
+  const insights = INSIGHTS.map((post) => ({
+    url: `${baseUrl}/insights/${post.slug}`,
+    lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  const insightRoutes = INSIGHTS.map((post) => ({
-    url: `${BASE_URL}/insights/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.5,
-  }));
-
-  return [...staticRoutes, ...solutionRoutes, ...insightRoutes];
+  return [...routes, ...solutions, ...insights];
 }

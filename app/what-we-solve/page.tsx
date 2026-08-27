@@ -22,10 +22,10 @@ export default function WhatWeSolveHub() {
             href={`/what-we-solve/${s.slug}`}
             className="card-surface flex flex-col justify-between p-6 transition-colors hover:border-cyan"
           >
-            <div>
+            <div className="flex flex-col">
               <p className="text-sm text-mist">« {s.problemTitle} »</p>
               <p className="mt-2 font-display text-lg font-semibold text-ice">{s.name}</p>
-              <p className="mt-3 text-sm text-mist">{s.hook}</p>
+              <p className="mt-3 text-sm text-mist line-clamp-3">{s.intro}</p>
             </div>
             <span className="mt-6 text-sm text-cyan">Voir la solution →</span>
           </Link>

@@ -36,13 +36,7 @@ export const metadata: Metadata = {
   },
   description:
     "QAVYON connecte les systèmes complexes (ERP, Data, IA, OT) des industriels européens mid-market. Ingénierie senior, nearshore France–Maroc.",
-  keywords: [
-    "moderniser ERP industriel",
-    "industrialiser IA manufacturing",
-    "intégration OT IT usine",
-    "gouvernance données industrielles",
-    "nearshore SAP France Maroc",
-  ],
+
   openGraph: {
     type: "website",
     locale: "fr_FR",
@@ -59,8 +53,8 @@ export const metadata: Metadata = {
       "QAVYON connecte les systèmes complexes (ERP, Data, IA, OT) des industriels européens mid-market.",
   },
   robots: {
-    index: true,
-    follow: true,
+    index: process.env.NEXT_PUBLIC_ENV === "production",
+    follow: process.env.NEXT_PUBLIC_ENV === "production",
   },
 };
 

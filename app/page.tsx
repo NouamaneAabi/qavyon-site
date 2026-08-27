@@ -7,7 +7,7 @@ import HeroCtas from "@/components/HeroCtas";
 export const metadata: Metadata = {
   title: "QAVYON — Make complexity work.",
   description:
-    "Nous connectons ERP, Data, IA et OT pour les industriels européens mid-market. Diagnostic gratuit en 5 minutes.",
+    "Nous connectons ERP, Data, IA et OT pour les industriels européens mid-market. Diagnostic gratuit en 3 minutes.",
   alternates: { canonical: "/" },
 };
 
@@ -21,9 +21,9 @@ const PROBLEMS = [
 ];
 
 const INSIGHTS = [
-  { slug: "erp-modernization-signes-avant-coureurs", title: "5 signes que votre ERP industriel ne suit plus", excerpt: "Les symptômes concrets qui précèdent une crise ERP — et comment les repérer avant qu'il ne soit trop tard." },
-  { slug: "donnees-fiables-avant-ia", title: "Pourquoi la fiabilité des données précède toujours l'IA", excerpt: "L'IA industrielle échoue rarement à cause du modèle. Elle échoue à cause de la donnée qui l'alimente." },
-  { slug: "nearshore-sap-maroc-france", title: "Nearshore SAP France–Maroc : ce qui marche vraiment", excerpt: "Ce que nous avons appris après plusieurs cycles de renfort nearshore sur des programmes ERP critiques." },
+  { slug: "erp-frein-transformation-digitale", title: "Pourquoi votre ERP freine votre transformation digitale", excerpt: "Votre ERP est le cœur de votre système d'information. S'il est vieillissant, mal exploité ou fragmenté, il devient le facteur limitant de toute votre transformation." },
+  { slug: "erreurs-projet-ia-industrie", title: "5 erreurs à éviter avant de lancer un projet IA en industrie", excerpt: "L'IA promet des gains de productivité massifs dans l'industrie. Mais 80% des projets IA échouent." },
+  { slug: "pont-ot-it-industrie-4", title: "OT/IT : le pont indispensable pour l'industrie 4.0", excerpt: "L'industrie 4.0 repose sur l'intégration entre les systèmes de gestion (IT) et les machines (OT). Sans ce pont, les données restent cloisonnées." },
 ];
 
 export default function HomePage() {
@@ -136,7 +136,7 @@ export default function HomePage() {
             <div>
               <p className="eyebrow mb-3">QuickScan</p>
               <h2 className="text-3xl font-bold md:text-4xl">
-                Un diagnostic en 5 minutes. Pas un formulaire de contact.
+                Un diagnostic en 3 minutes. Pas un formulaire de contact.
               </h2>
               <p className="mt-4 text-mist">
                 7 questions sur votre ERP, votre data, votre IA et votre OT/IT. En retour : votre facteur limitant, vos priorités et une prochaine étape concrète.

@@ -1,15 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { track } from "@/lib/tracking";
 
 export default function BookingForm() {
+  const [mounted, setMounted] = useState(false);
+  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;
+
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
   const [consent, setConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -35,6 +42,19 @@ export default function BookingForm() {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Une erreur est survenue.");
     }
+  }
+
+  if (!mounted) return null;
+
+  if (calendlyUrl) {
+    return (
+      <div className="card-surface p-8 text-center flex flex-col items-center">
+        <p className="mb-6 text-mist">Choisissez le créneau qui vous convient directement dans notre agenda.</p>
+        <a href={calendlyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary w-full max-w-sm">
+          Ouvrir le calendrier
+        </a>
+      </div>
+    );
   }
 
   if (status === "success") {
