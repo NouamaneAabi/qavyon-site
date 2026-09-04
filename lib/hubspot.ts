@@ -96,7 +96,7 @@ export async function sendFailedLeadAlert(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "QAVYON Alerts <noreply@qavyon.com>",
+        from: "QAVYON Alerts <onboarding@resend.dev>",
         to: [adminEmail],
         subject: `Alerte lead en échec — ${lead.source}`,
         html: `
