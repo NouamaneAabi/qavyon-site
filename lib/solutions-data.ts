@@ -14,6 +14,8 @@ export interface SolutionData {
   useCases: string[];
   faq: { question: string; answer: string }[];
   systemPath: LayerId[];
+  nearshoreLever?: string;
+  relatedInsights?: string[];
 }
 
 export const SOLUTIONS: Record<string, SolutionData> = {
@@ -55,7 +57,9 @@ export const SOLUTIONS: Record<string, SolutionData> = {
       { question: "Combien coûte une migration ERP ?", answer: "Cela dépend du périmètre, de l'état de la donnée et des customisations. [Fourchettes à valider]" },
       { question: "Peut-on moderniser un ERP sans arrêter la production ?", answer: "Oui, par une approche itérative." }
     ],
-    systemPath: ["layer-01", "layer-02"]
+    systemPath: ["layer-01", "layer-02"],
+    nearshoreLever: "Mobilisez des experts ERP (SAP, Oracle, Sage) en nearshore pour renforcer vos équipes projet sans faire exploser le budget d'intégration.",
+    relatedInsights: ["erp-frein-transformation-digitale"]
   },
   "data-ai": {
     slug: "data-ai",
@@ -87,7 +91,9 @@ export const SOLUTIONS: Record<string, SolutionData> = {
       { question: "Comment améliorer la qualité des données ?", answer: "Désigner des propriétaires, unifier les référentiels, corriger à la source." },
       { question: "Faut-il un data warehouse pour commencer ?", answer: "Non, commencer par les cas de décision prioritaires et la fiabilité à la source." }
     ],
-    systemPath: ["layer-02", "layer-03"]
+    systemPath: ["layer-02", "layer-03"],
+    nearshoreLever: "Renforcez votre équipe avec des Data Engineers et Data Analysts seniors basés au Maroc, en totale intégration avec vos équipes européennes.",
+    relatedInsights: ["erreurs-projet-ia-industrie"]
   },
   "industrial-ai": {
     slug: "industrial-ai",
@@ -122,7 +128,9 @@ export const SOLUTIONS: Record<string, SolutionData> = {
       { question: "Quels sont les cas d'usage de l'IA en entreprise industrielle ?", answer: "Maintenance prédictive, contrôle qualité, prévision des stocks, optimisation énergétique." },
       { question: "Pourquoi nos POC IA n'aboutissent-ils jamais ?", answer: "Données non fiables, absence d'intégration, aucun plan d'exploitation." }
     ],
-    systemPath: ["layer-03", "layer-04"]
+    systemPath: ["layer-03", "layer-04"],
+    nearshoreLever: "Nos Data Scientists et MLOps nearshore accélèrent le passage en production de vos modèles industriels.",
+    relatedInsights: ["erreurs-projet-ia-industrie"]
   },
   "ot-it-integration": {
     slug: "ot-it-integration",
@@ -157,7 +165,9 @@ export const SOLUTIONS: Record<string, SolutionData> = {
       { question: "Comment sécuriser un environnement industriel ?", answer: "Par segmentation réseau, contrôle d'accès strict, supervision." },
       { question: "Pourquoi intégrer l'ERP et le MES ?", answer: "Pour aligner la planification et l'exécution sur une même réalité." }
     ],
-    systemPath: ["layer-01", "layer-02", "layer-03"]
+    systemPath: ["layer-01", "layer-02", "layer-03"],
+    nearshoreLever: "Accélérez le déploiement de vos architectures Edge et de vos passerelles OT/IT grâce à notre centre de services dédié.",
+    relatedInsights: ["pont-ot-it-industrie-4"]
   },
   trust: {
     slug: "trust",
@@ -187,7 +197,8 @@ export const SOLUTIONS: Record<string, SolutionData> = {
       { question: "En quoi la cybersécurité OT diffère-t-elle de l'IT ?", answer: "L'OT priorise la disponibilité ; on ne peut pas appliquer les réflexes IT." },
       { question: "Par où commencer ?", answer: "Par une cartographie des accès et des risques." }
     ],
-    systemPath: ["layer-01", "layer-02", "layer-03", "layer-04", "layer-05"]
+    systemPath: ["layer-01", "layer-02", "layer-03", "layer-04", "layer-05"],
+    nearshoreLever: "Déployez votre gouvernance et consolidez la sécurité de vos accès via notre plateau nearshore spécialisé."
   },
   "nearshore-acceleration": {
     slug: "nearshore-acceleration",

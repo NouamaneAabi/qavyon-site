@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SolutionData } from "@/lib/solutions-data";
 import QavyonSystem from "@/components/QavyonSystem";
+import { INSIGHTS } from "@/lib/insights-data";
 
 export default function SolutionPageTemplate({ solution }: { solution: SolutionData }) {
   const faqJsonLd = solution.faq && solution.faq.length > 0 ? {
@@ -31,6 +32,8 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
     provider: { "@type": "Organization", name: "QAVYON" },
     areaServed: "Europe",
   };
+
+  const related = solution.relatedInsights ? INSIGHTS.filter((i) => solution.relatedInsights?.includes(i.slug)) : [];
 
   return (
     <>
@@ -91,6 +94,13 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
                 <p className="mt-3 text-sm text-mist">{solution.environments}</p>
               </div>
             )}
+            
+            {solution.nearshoreLever && (
+              <div className="mt-8 p-6 border border-cyan/40 bg-cyan/5 rounded-sm">
+                <h3 className="font-semibold text-cyan">Levier Nearshore</h3>
+                <p className="mt-3 text-sm text-mist">{solution.nearshoreLever}</p>
+              </div>
+            )}
           </div>
           <div>
             <h2 className="text-2xl font-bold md:text-3xl text-ice">Ce que nous faisons</h2>
@@ -130,6 +140,27 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
                   <h3 className="font-semibold text-ice mb-3">{f.question}</h3>
                   <p className="text-sm text-mist leading-relaxed">{f.answer}</p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Articles liés */}
+      {related.length > 0 && (
+        <section className="border-t border-steel bg-carbon">
+          <div className="container-qv py-16">
+            <h2 className="text-2xl font-bold md:text-3xl text-ice">Articles liés</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-2">
+              {related.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/insights/${post.slug}`}
+                  className="card-surface flex flex-col p-6 transition-colors hover:border-cyan"
+                >
+                  <p className="font-display text-lg font-semibold text-ice">{post.title}</p>
+                  <p className="mt-3 text-sm text-mist">{post.excerpt}</p>
+                </Link>
               ))}
             </div>
           </div>

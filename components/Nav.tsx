@@ -69,11 +69,8 @@ export default function Nav() {
         </nav>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="/quickscan" className="btn-secondary" onClick={() => track("hero_cta_click", { location: "nav" })}>
+          <Link href="/quickscan" className="btn-primary" onClick={() => track("hero_cta_click", { location: "nav" })}>
             QuickScan
-          </Link>
-          <Link href="/book" className="btn-primary">
-            Book a Call
           </Link>
         </div>
 
@@ -102,8 +99,7 @@ export default function Nav() {
             <Link href="/insights" className="py-2 text-mist hover:text-ice">Insights</Link>
             <Link href="/about" className="py-2 text-mist hover:text-ice">About</Link>
             <div className="mt-3 flex flex-col gap-2">
-              <Link href="/quickscan" className="btn-secondary w-full">QuickScan</Link>
-              <Link href="/book" className="btn-primary w-full">Book a Call</Link>
+              <Link href="/quickscan" className="btn-primary w-full">QuickScan</Link>
             </div>
           </div>
         </nav>

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { runQuickScan, QuickScanInput } from "@/lib/quickscan-engine";
+import { submitLead } from "@/lib/hubspot";
 
 const MATURITY_VALUES = new Set(["0", "1", "2", "3"]);
 const CONSTRAINT_VALUES = new Set(["budget", "time", "internal-skills", "change-management"]);
@@ -33,7 +34,11 @@ function isValid(body: unknown): body is QuickScanInput {
     typeof b.constraint === "string" &&
     CONSTRAINT_VALUES.has(b.constraint) &&
     typeof b.horizon === "string" &&
-    HORIZON_VALUES.has(b.horizon)
+    HORIZON_VALUES.has(b.horizon) &&
+    typeof b.email === "string" &&
+    b.email.includes("@") &&
+    typeof b.consent === "boolean" &&
+    b.consent === true
   );
 }
 
@@ -53,6 +58,19 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    const leadResult = await submitLead({
+      firstName: "QuickScan",
+      email: body.email,
+      consent: body.consent,
+      source: "quickscan",
+    });
+
+    if (!leadResult.delivered && leadResult.persisted) {
+      console.warn("[fallback] HubSpot indisponible, lead sauvegardé dans Vercel KV :", body.email);
+    } else if (!leadResult.delivered) {
+      console.warn("[fallback] HubSpot indisponible et pas de persistance KV disponible :", body.email);
+    }
+
     const result = runQuickScan(body);
     return NextResponse.json({ result }, { status: 200 });
   } catch (err) {

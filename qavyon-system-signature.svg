@@ -1,0 +1,146 @@
+<svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="qs-title qs-desc" font-family="'Space Grotesk','Inter',system-ui,sans-serif">
+  <title id="qs-title">The QAVYON System</title>
+  <desc id="qs-desc">Cinq couches connectées — Ops &amp; OT, ERP, Data, IA, Software — entourées d'une enveloppe Trust, dont les flux convergent vers un point d'impact.</desc>
+
+  <defs>
+    <!-- palette tokens -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A0E14"/>
+      <stop offset="1" stop-color="#0C1119"/>
+    </linearGradient>
+    <radialGradient id="impactGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7A45" stop-opacity="0.9"/>
+      <stop offset="0.4" stop-color="#FF7A45" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FF7A45" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#12B5CB" stop-opacity="0.15"/>
+      <stop offset="0.7" stop-color="#12B5CB" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FF7A45" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <style>
+      .flow{fill:none;stroke:url(#flowGrad);stroke-width:1.6;stroke-linecap:round;
+            stroke-dasharray:6 10;animation:dash 3.2s linear infinite;}
+      .rise{fill:none;stroke:#12B5CB;stroke-opacity:.55;stroke-width:1.2;}
+      .impactCore{animation:pulse 2.6s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
+      @keyframes dash{to{stroke-dashoffset:-160;}}
+      @keyframes pulse{0%,100%{opacity:.85;}50%{opacity:1;}}
+      @media (prefers-reduced-motion: reduce){
+        .flow{animation:none;stroke-dasharray:none;}
+        .impactCore{animation:none;}
+      }
+      .layerLabel{fill:#F7F9FB;font-size:22px;font-weight:600;letter-spacing:.2px;}
+      .layerDesc{fill:#9AA4B2;font-size:12.5px;}
+      .layerNum{fill:#3A4453;font-size:13px;font-weight:600;letter-spacing:2px;}
+      .node{font-size:11px;fill:#C9D1DC;letter-spacing:.4px;}
+      .frameLabel{fill:#7C8A79;font-size:12px;font-weight:600;letter-spacing:4px;}
+      .kicker{fill:#12B5CB;font-size:13px;font-weight:600;letter-spacing:3px;}
+      .h1{fill:#F7F9FB;font-size:30px;font-weight:700;}
+      .impactLabel{fill:#FF7A45;font-size:13px;font-weight:600;letter-spacing:1px;}
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <!-- faint blueprint grid -->
+  <g stroke="#12B5CB" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 40H1280M0 120H1280M0 200H1280M0 280H1280M0 360H1280M0 440H1280M0 520H1280M0 600H1280M0 680H1280"/>
+    <path d="M40 0V720M120 0V720M200 0V720M280 0V720M360 0V720M440 0V720M520 0V720M600 0V720M680 0V720M760 0V720M840 0V720M920 0V720M1000 0V720M1080 0V720M1160 0V720M1240 0V720"/>
+  </g>
+
+  <!-- header -->
+  <text x="110" y="52" class="kicker">THE QAVYON SYSTEM</text>
+  <text x="110" y="86" class="h1">La valeur naît de la connexion.</text>
+
+  <!-- TRUST envelope -->
+  <rect x="86" y="104" width="880" height="536" rx="14" fill="none" stroke="#7C8A79" stroke-opacity="0.55" stroke-width="1.4" stroke-dasharray="2 6"/>
+  <text x="112" y="128" class="frameLabel">TRUST · SÉCURITÉ &amp; GOUVERNANCE</text>
+
+  <!-- ===== LAYERS (bottom 01 -> top 05) ===== -->
+  <!-- 05 Software (top) -->
+  <g>
+    <rect x="110" y="150" width="820" height="80" rx="8" fill="#1C232E" stroke="#3A4453" stroke-width="1"/>
+    <rect x="110" y="150" width="5" height="80" rx="2.5" fill="#5B7FB0"/>
+    <text x="132" y="182" class="layerNum">05</text>
+    <text x="170" y="185" class="layerLabel">Software</text>
+    <text x="170" y="208" class="layerDesc">Les applications métier qui exposent la valeur aux équipes terrain.</text>
+  </g>
+  <!-- 04 IA -->
+  <g>
+    <rect x="110" y="248" width="820" height="80" rx="8" fill="#1C232E" stroke="#3A4453" stroke-width="1"/>
+    <rect x="110" y="248" width="5" height="80" rx="2.5" fill="#3E9AA8"/>
+    <text x="132" y="280" class="layerNum">04</text>
+    <text x="170" y="283" class="layerLabel">IA</text>
+    <text x="170" y="306" class="layerDesc">Des cas d'usage industrialisés, construits sur une donnée de confiance.</text>
+  </g>
+  <!-- 03 Data -->
+  <g>
+    <rect x="110" y="346" width="820" height="80" rx="8" fill="#1C232E" stroke="#3A4453" stroke-width="1"/>
+    <rect x="110" y="346" width="5" height="80" rx="2.5" fill="#3E9AA8"/>
+    <text x="132" y="378" class="layerNum">03</text>
+    <text x="170" y="381" class="layerLabel">Data</text>
+    <text x="170" y="404" class="layerDesc">La donnée consolidée, fiable et gouvernée, issue de l'ERP et de l'OT.</text>
+  </g>
+  <!-- 02 ERP (spine, core color) -->
+  <g>
+    <rect x="110" y="444" width="820" height="80" rx="8" fill="#0B3A45" stroke="#12B5CB" stroke-opacity="0.5" stroke-width="1"/>
+    <rect x="110" y="444" width="5" height="80" rx="2.5" fill="#12B5CB"/>
+    <text x="132" y="476" class="layerNum">02</text>
+    <text x="170" y="479" class="layerLabel">ERP · spine</text>
+    <text x="170" y="502" class="layerDesc">Le système de gestion qui orchestre commandes, stocks et production.</text>
+  </g>
+  <!-- 01 Ops & OT (bottom) -->
+  <g>
+    <rect x="110" y="542" width="820" height="80" rx="8" fill="#1C232E" stroke="#3A4453" stroke-width="1"/>
+    <rect x="110" y="542" width="5" height="80" rx="2.5" fill="#6E7F8C"/>
+    <text x="132" y="574" class="layerNum">01</text>
+    <text x="170" y="577" class="layerLabel">Ops &amp; OT</text>
+    <text x="170" y="600" class="layerDesc">Machines, capteurs, lignes de production — la réalité physique de l'usine.</text>
+  </g>
+
+  <!-- ===== rising signals (bottom -> up), subtle ===== -->
+  <g class="rise">
+    <path d="M620 582 V 484"/>
+    <path d="M700 582 V 386"/>
+    <path d="M780 582 V 288"/>
+    <path d="M860 582 V 190"/>
+  </g>
+
+  <!-- ===== converging flows toward impact node ===== -->
+  <g>
+    <path class="flow" d="M930 190 C 1030 210, 1060 320, 1150 360"/>
+    <path class="flow" d="M930 288 C 1030 300, 1070 340, 1150 360"/>
+    <path class="flow" d="M930 386 C 1030 380, 1080 368, 1150 360"/>
+    <path class="flow" d="M930 484 C 1030 460, 1070 390, 1150 360"/>
+    <path class="flow" d="M930 582 C 1040 540, 1080 410, 1150 360"/>
+  </g>
+
+  <!-- ===== 7 historic nodes ===== -->
+  <g>
+    <!-- Industrie (Ops&OT) -->
+    <circle cx="470" cy="542" r="4" fill="#6E7F8C"/><text x="482" y="546" class="node">Industrie</text>
+    <!-- Transformation (arc, on ERP spine) -->
+    <circle cx="470" cy="444" r="4" fill="#12B5CB"/><text x="482" y="448" class="node">Transformation</text>
+    <!-- Data -->
+    <circle cx="470" cy="346" r="4" fill="#3E9AA8"/><text x="482" y="350" class="node">Data</text>
+    <!-- Intelligence (IA) -->
+    <circle cx="470" cy="248" r="4" fill="#3E9AA8"/><text x="482" y="252" class="node">Intelligence</text>
+    <!-- Digital (Software) -->
+    <circle cx="470" cy="150" r="4" fill="#5B7FB0"/><text x="482" y="154" class="node">Digital</text>
+    <!-- Confiance (Trust frame, top) -->
+    <circle cx="720" cy="104" r="4" fill="#7C8A79"/><text x="732" y="108" class="node">Confiance</text>
+    <!-- Accélération (the current, near flows) -->
+    <circle cx="1012" cy="248" r="4" fill="#12B5CB"/><text x="1024" y="252" class="node">Accélération</text>
+  </g>
+
+  <!-- ===== Impact node ===== -->
+  <circle cx="1150" cy="360" r="70" fill="url(#impactGlow)"/>
+  <circle class="impactCore" cx="1150" cy="360" r="16" fill="#FF7A45"/>
+  <circle cx="1150" cy="360" r="16" fill="none" stroke="#FF7A45" stroke-opacity="0.5" stroke-width="1.5"/>
+  <text x="1150" y="452" text-anchor="middle" class="impactLabel">IMPACT</text>
+  <text x="1150" y="470" text-anchor="middle" class="layerDesc" style="fill:#9AA4B2;">mesuré à chaque couche</text>
+</svg>

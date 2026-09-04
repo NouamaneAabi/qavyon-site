@@ -26,6 +26,8 @@ export interface QuickScanInput {
   otIt: MaturityAnswer; // Q6
   constraint: Constraint; // Q7a
   horizon: Horizon; // Q7b
+  email: string; // Q8
+  consent: boolean; // Q8
 }
 
 export type Domain = "erp" | "data" | "ai" | "otIt";

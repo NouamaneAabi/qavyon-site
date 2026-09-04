@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import QavyonSystem from "@/components/QavyonSystem";
 import ProblemCard from "@/components/ProblemCard";
 import HeroCtas from "@/components/HeroCtas";
+import HeroConvergenceBackground from "@/components/HeroConvergenceBackground";
+import { INSIGHTS } from "@/lib/insights-data";
 
 export const metadata: Metadata = {
   title: "QAVYON — Make complexity work.",
@@ -20,18 +22,14 @@ const PROBLEMS = [
   { title: "Il nous faut de la capacité senior, vite", href: "/what-we-solve/nearshore-acceleration" },
 ];
 
-const INSIGHTS = [
-  { slug: "erp-frein-transformation-digitale", title: "Pourquoi votre ERP freine votre transformation digitale", excerpt: "Votre ERP est le cœur de votre système d'information. S'il est vieillissant, mal exploité ou fragmenté, il devient le facteur limitant de toute votre transformation." },
-  { slug: "erreurs-projet-ia-industrie", title: "5 erreurs à éviter avant de lancer un projet IA en industrie", excerpt: "L'IA promet des gains de productivité massifs dans l'industrie. Mais 80% des projets IA échouent." },
-  { slug: "pont-ot-it-industrie-4", title: "OT/IT : le pont indispensable pour l'industrie 4.0", excerpt: "L'industrie 4.0 repose sur l'intégration entre les systèmes de gestion (IT) et les machines (OT). Sans ce pont, les données restent cloisonnées." },
-];
 
 export default function HomePage() {
   return (
     <>
       {/* 1. Hero */}
       <section className="relative overflow-hidden border-b border-steel">
-        <div className="container-qv relative py-24 md:py-32">
+        <HeroConvergenceBackground />
+        <div className="container-qv relative z-10 py-24 md:py-32">
           <p className="eyebrow mb-6 animate-converge">Ingénierie pour l'industrie mid-market européenne</p>
           <h1 className="max-w-3xl animate-converge text-4xl font-bold leading-[1.05] md:text-6xl" style={{ animationDelay: "80ms" }}>
             Make complexity work.
@@ -115,7 +113,7 @@ export default function HomePage() {
             Ce que nous apprenons sur le terrain.
           </h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {INSIGHTS.map((post) => (
+            {INSIGHTS.slice(0, 3).map((post) => (
               <Link
                 key={post.slug}
                 href={`/insights/${post.slug}`}

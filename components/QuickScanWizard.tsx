@@ -64,7 +64,7 @@ const HORIZONS: RadioOption[] = [
   { value: "over-12-months", label: "Plus de 12 mois" },
 ];
 
-const TOTAL_STEPS = 7;
+const TOTAL_STEPS = 8;
 
 function RadioGroup({
   name,
@@ -162,6 +162,7 @@ export default function QuickScanWizard() {
       case 5: return !!answers.ai;
       case 6: return !!answers.otIt;
       case 7: return !!answers.constraint && !!answers.horizon;
+      case 8: return !!answers.email && answers.email.includes("@") && !!answers.consent;
       default: return false;
     }
   }
@@ -169,6 +170,8 @@ export default function QuickScanWizard() {
   async function handleSubmit() {
     setSubmitting(true);
     setError(null);
+    track("quickscan_email_submitted");
+    track("quickscan_consent_given");
     try {
       const res = await fetch("/api/quickscan", {
         method: "POST",
@@ -270,6 +273,38 @@ export default function QuickScanWizard() {
             <fieldset>
               <legend className="mb-6 font-display text-xl font-semibold text-ice">Sur quel horizon ?</legend>
               <RadioGroup name="Horizon" options={HORIZONS} value={answers.horizon} onChange={(v) => set("horizon", v as QuickScanInput["horizon"])} />
+            </fieldset>
+          </div>
+        )}
+        {step === 8 && (
+          <div className="space-y-6">
+            <fieldset>
+              <legend className="mb-6 font-display text-xl font-semibold text-ice">Où envoyer votre diagnostic ?</legend>
+              <div className="space-y-4">
+                <div>
+                  <label htmlFor="email" className="mb-2 block text-sm text-mist">Email professionnel</label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    value={answers.email ?? ""}
+                    onChange={(e) => set("email", e.target.value)}
+                    className="w-full rounded-sm border border-steel bg-obsidian px-4 py-3 text-ice placeholder:text-mist/50"
+                    placeholder="prenom@entreprise.com"
+                  />
+                </div>
+                <label className="flex items-start gap-3 text-sm text-mist">
+                  <input
+                    type="checkbox"
+                    checked={answers.consent ?? false}
+                    onChange={(e) => set("consent", e.target.checked)}
+                    className="mt-1 h-4 w-4 rounded-sm border-steel bg-obsidian accent-cyan"
+                  />
+                  <span>
+                    J'accepte que QAVYON me recontacte avec mon diagnostic, conformément à la <Link href="/legal/privacy" className="text-cyan underline">politique de confidentialité</Link>.
+                  </span>
+                </label>
+              </div>
             </fieldset>
           </div>
         )}

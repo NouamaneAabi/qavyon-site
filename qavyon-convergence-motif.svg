@@ -1,0 +1,70 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QAVYON — flux convergeant vers un point d'impact">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0E14"/><stop offset="1" stop-color="#0B0F17"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FF7A45" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#FF7A45" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#FF7A45" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g stroke="#12B5CB" stroke-opacity="0.045" stroke-width="1">
+    <path d="M0 0H1200"/><path d="M0 42H1200"/><path d="M0 84H1200"/><path d="M0 126H1200"/><path d="M0 168H1200"/><path d="M0 210H1200"/><path d="M0 252H1200"/><path d="M0 294H1200"/><path d="M0 336H1200"/><path d="M0 378H1200"/><path d="M0 420H1200"/><path d="M0 462H1200"/><path d="M0 504H1200"/><path d="M0 546H1200"/><path d="M0 588H1200"/>
+    <path d="M0 0V630"/><path d="M42 0V630"/><path d="M84 0V630"/><path d="M126 0V630"/><path d="M168 0V630"/><path d="M210 0V630"/><path d="M252 0V630"/><path d="M294 0V630"/><path d="M336 0V630"/><path d="M378 0V630"/><path d="M420 0V630"/><path d="M462 0V630"/><path d="M504 0V630"/><path d="M546 0V630"/><path d="M588 0V630"/><path d="M630 0V630"/><path d="M672 0V630"/><path d="M714 0V630"/><path d="M756 0V630"/><path d="M798 0V630"/><path d="M840 0V630"/><path d="M882 0V630"/><path d="M924 0V630"/><path d="M966 0V630"/><path d="M1008 0V630"/><path d="M1050 0V630"/><path d="M1092 0V630"/><path d="M1134 0V630"/><path d="M1176 0V630"/>
+  </g>
+  <g>
+    <path d="M1024 650 Q 895 428 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.42" stroke-width="0.69"/>
+    <path d="M63 -20 Q 428 92 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.26" stroke-width="0.67"/>
+    <path d="M-20 347 Q 333 339 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.48" stroke-width="1.23"/>
+    <path d="M1024 -20 Q 917 135 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.49" stroke-width="0.65"/>
+    <path d="M1220 84 Q 996 204 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.32" stroke-width="1.16"/>
+    <path d="M195 650 Q 503 499 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.24" stroke-width="1.15"/>
+    <path d="M-20 356 Q 400 335 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.3" stroke-width="1.38"/>
+    <path d="M-20 369 Q 380 318 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.41" stroke-width="1.3"/>
+    <path d="M88 -20 Q 416 147 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.22" stroke-width="1.05"/>
+    <path d="M1059 -20 Q 879 138 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.4" stroke-width="0.75"/>
+    <path d="M-20 266 Q 441 240 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.31" stroke-width="1.39"/>
+    <path d="M1220 198 Q 1029 268 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.32" stroke-width="1.06"/>
+    <path d="M1220 59 Q 978 211 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.11" stroke-width="1.33"/>
+    <path d="M699 650 Q 805 521 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.2" stroke-width="0.99"/>
+    <path d="M375 650 Q 636 465 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.34" stroke-width="1.09"/>
+    <path d="M830 -20 Q 766 117 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.24" stroke-width="1.47"/>
+    <path d="M-20 105 Q 374 183 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.14" stroke-width="1.03"/>
+    <path d="M301 -20 Q 536 131 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.45" stroke-width="1.56"/>
+    <path d="M90 -20 Q 399 167 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.09" stroke-width="1.43"/>
+    <path d="M284 -20 Q 478 138 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.24" stroke-width="1.17"/>
+    <path d="M746 -20 Q 771 162 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.36" stroke-width="0.65"/>
+    <path d="M1220 491 Q 1051 439 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.24" stroke-width="1.0"/>
+    <path d="M-20 303 Q 374 272 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.49" stroke-width="1.04"/>
+    <path d="M-20 214 Q 332 205 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.14" stroke-width="0.7"/>
+    <path d="M663 650 Q 676 447 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.24" stroke-width="1.23"/>
+    <path d="M650 650 Q 718 436 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.28" stroke-width="1.58"/>
+    <path d="M-20 305 Q 336 262 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.22" stroke-width="0.86"/>
+    <path d="M1220 436 Q 1008 340 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.48" stroke-width="0.96"/>
+    <path d="M587 650 Q 633 486 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.49" stroke-width="1.46"/>
+    <path d="M913 650 Q 855 531 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.23" stroke-width="0.82"/>
+    <path d="M841 -20 Q 796 114 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.42" stroke-width="1.58"/>
+    <path d="M1220 123 Q 975 207 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.42" stroke-width="0.8"/>
+    <path d="M-20 224 Q 329 213 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.2" stroke-width="0.86"/>
+    <path d="M654 650 Q 704 520 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.38" stroke-width="0.95"/>
+    <path d="M87 650 Q 392 479 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.22" stroke-width="1.08"/>
+    <path d="M908 -20 Q 847 166 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.42" stroke-width="0.68"/>
+    <path d="M129 650 Q 447 508 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.16" stroke-width="1.49"/>
+    <path d="M-20 497 Q 366 442 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.49" stroke-width="1.0"/>
+    <path d="M-20 468 Q 336 351 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.5" stroke-width="0.63"/>
+    <path d="M977 -20 Q 921 105 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.43" stroke-width="1.58"/>
+    <path d="M1012 650 Q 861 488 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.09" stroke-width="1.4"/>
+    <path d="M702 650 Q 750 535 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.26" stroke-width="1.47"/>
+    <path d="M1220 551 Q 949 398 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.29" stroke-width="1.36"/>
+    <path d="M280 650 Q 526 438 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.46" stroke-width="0.95"/>
+    <path d="M-20 417 Q 424 368 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.43" stroke-width="1.48"/>
+    <path d="M574 -20 Q 686 90 792 315" fill="none" stroke="#12B5CB" stroke-opacity="0.26" stroke-width="0.78"/>
+  </g>
+  <circle cx="792" cy="315" r="95" fill="url(#glow)"/>
+  <circle cx="792" cy="315" r="15" fill="#FF7A45"/>
+  <circle cx="792" cy="315" r="15" fill="none" stroke="#FF7A45" stroke-opacity="0.5" stroke-width="1.5"/>
+  <text x="70" y="560" font-family="'Space Grotesk','Inter',sans-serif" font-size="34" font-weight="700" fill="#F7F9FB">QAVYON</text>
+  <text x="70" y="590" font-family="'Space Grotesk','Inter',sans-serif" font-size="16" fill="#12B5CB" letter-spacing="1">Make complexity work.</text>
+</svg>
