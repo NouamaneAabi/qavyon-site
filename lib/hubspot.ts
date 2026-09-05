@@ -152,8 +152,8 @@ export async function submitLead(lead: Lead): Promise<{ delivered: boolean; queu
       }),
     });
 
-    if (res.ok) {
-      console.log("[hubspot] Lead sent to HubSpot successfully!");
+    if (res.ok || res.status === 409) {
+      console.log("[hubspot] Lead sent to HubSpot successfully! (ou déjà existant)");
       return { delivered: true, queued: false, persisted: false, alertSent: false };
     }
 
