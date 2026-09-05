@@ -48,11 +48,21 @@ export default function BookingForm() {
 
   if (calendlyUrl) {
     return (
-      <div className="card-surface p-8 text-center flex flex-col items-center">
-        <p className="mb-6 text-mist">Choisissez le créneau qui vous convient directement dans notre agenda.</p>
-        <a href={calendlyUrl} target="_blank" rel="noopener noreferrer" className="btn-primary w-full max-w-sm">
-          Ouvrir le calendrier
-        </a>
+      <div className="w-full">
+        <div className="mb-6 text-center">
+          <h2 className="font-display text-2xl font-semibold text-ice">
+            30 minutes avec un ingénieur senior.
+          </h2>
+          <p className="mt-2 text-mist">
+            Pas un commercial. Pas un formulaire qui disparaît dans un CRM.
+          </p>
+        </div>
+        <iframe
+          src={calendlyUrl}
+          title="Calendrier de réservation QAVYON"
+          className="h-[700px] w-full rounded-lg border border-steel bg-carbon"
+          loading="lazy"
+        />
       </div>
     );
   }
