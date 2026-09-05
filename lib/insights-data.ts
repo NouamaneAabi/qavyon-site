@@ -4,6 +4,9 @@ export interface InsightPost {
   excerpt: string;
   date: string;
   body: string[];
+  level: "Executive" | "Business" | "Technical";
+  readingTime: number;
+  author: string;
 }
 
 export const INSIGHTS: InsightPost[] = [
@@ -12,6 +15,9 @@ export const INSIGHTS: InsightPost[] = [
     title: "Pourquoi un ERP vieillissant devient le facteur limitant de toute votre chaîne de valeur",
     excerpt: "Votre ERP est le cœur de votre système d'information. S'il est vieillissant, mal exploité ou fragmenté, il devient le facteur limitant de toute votre chaîne de valeur.",
     date: "2026-06-02",
+    level: "Executive",
+    readingTime: 6,
+    author: "Équipe QAVYON",
     body: [
       "Votre ERP est le cœur de votre système d'information. S'il est vieillissant, mal exploité ou fragmenté, il devient le facteur limitant de toute votre chaîne de valeur. Dans cet article, nous expliquons comment identifier les signes d'un ERP à bout de souffle et comment le moderniser sans arrêter la production.",
       "Beaucoup d'entreprises industrielles ont implémenté leur ERP principal il y a plus de 10 ans, parfois même 15. À cette époque, le périmètre était défini par les besoins immédiats : gestion financière, contrôle des stocks de base et suivi rudimentaire de la production. Depuis, l'entreprise a crû, s'est diversifiée, s'est ouverte à l'international ou a fusionné avec d'autres entités. Pourtant, le socle logiciel est resté fondamentalement le même. Pire, il a été adapté à la hâte pour répondre à des besoins non anticipés au départ, ajoutant des couches de complexité, de développements spécifiques et de dette technique.",
@@ -33,6 +39,9 @@ export const INSIGHTS: InsightPost[] = [
     title: "5 erreurs à éviter avant de lancer un projet IA en industrie",
     excerpt: "L'IA promet des gains de productivité massifs dans l'industrie. Mais 80% des projets IA échouent. La cause ? Des données non fiables, des cas d'usage mal définis et une déconnexion entre les équipes IT et production.",
     date: "2026-05-14",
+    level: "Business",
+    readingTime: 7,
+    author: "Équipe QAVYON",
     body: [
       "L'intelligence artificielle promet des gains de productivité sans précédent dans l'industrie : de l'optimisation énergétique à la maintenance prédictive, en passant par le contrôle qualité visuel. Les promesses sont réelles. Pourtant, les statistiques industrielles sont têtues et alarmantes : près de 80% des projets d'intelligence artificielle en environnement de production ne dépassent jamais le stade du POC (Proof of Concept).",
       "Cet échec massif est rarement lié à une défaillance de l'algorithme ou à une limite purement technologique. Les modèles mathématiques existent et fonctionnent. L'échec provient presque toujours d'un décalage profond entre l'approche théorique (souvent poussée par les éditeurs) et la réalité complexe, sale et temps réel du terrain industriel. Voici les 5 erreurs les plus fréquentes que nous constatons lors de nos audits, et les méthodologies strictes pour les éviter.",
@@ -48,6 +57,9 @@ export const INSIGHTS: InsightPost[] = [
     title: "OT/IT : le pont indispensable pour l'industrie 4.0",
     excerpt: "L'industrie 4.0 repose sur l'intégration entre les systèmes de gestion (IT) et les machines (OT). Sans ce pont, les données restent cloisonnées et la valeur ne circule pas.",
     date: "2026-04-22",
+    level: "Technical",
+    readingTime: 6,
+    author: "Équipe QAVYON",
     body: [
       "Le concept d'Industrie 4.0 repose sur une promesse simple et puissante : des usines intelligentes où la donnée circule fluidement depuis le capteur de la machine jusqu'au tableau de bord financier de la direction. Pourtant, cette intégration profonde entre les systèmes de gestion d'entreprise (IT - Information Technology) et les équipements de production (OT - Operational Technology) reste le défi technique et organisationnel majeur de la décennie. Sans ce pont, les données restent irrémédiablement cloisonnées et la valeur promise ne circule pas.",
       "Pendant des décennies, l'environnement IT (composé des ERP, systèmes CRM, outils de Business Intelligence, serveurs cloud) et les ateliers OT (composés des Automates Programmables Industriels, systèmes SCADA, robots, capteurs) ont évolué de manière totalement asynchrone et séparée. L'IT se focalisait sur les flux financiers, logistiques et transactionnels à l'échelle de l'entreprise. À l'inverse, l'OT privilégiait de manière obsessionnelle le contrôle en temps réel (en millisecondes), la sécurité physique des opérateurs et la disponibilité ininterrompue des équipements de production (le fameux « uptime »).",

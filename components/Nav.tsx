@@ -57,9 +57,6 @@ export default function Nav() {
           <Link href="/system" className="text-sm text-mist transition-colors hover:text-ice">
             The System
           </Link>
-          <Link href="/how-we-work" className="text-sm text-mist transition-colors hover:text-ice">
-            How We Work
-          </Link>
           <Link href="/insights" className="text-sm text-mist transition-colors hover:text-ice">
             Insights
           </Link>
@@ -95,7 +92,6 @@ export default function Nav() {
           <div className="container-qv flex flex-col gap-1 py-4">
             <Link href="/what-we-solve" className="py-2 text-mist hover:text-ice">What We Solve</Link>
             <Link href="/system" className="py-2 text-mist hover:text-ice">The System</Link>
-            <Link href="/how-we-work" className="py-2 text-mist hover:text-ice">How We Work</Link>
             <Link href="/insights" className="py-2 text-mist hover:text-ice">Insights</Link>
             <Link href="/about" className="py-2 text-mist hover:text-ice">About</Link>
             <div className="mt-3 flex flex-col gap-2">
