@@ -90,7 +90,7 @@ export default function RootLayout({
           Aller au contenu principal
         </a>
         <Nav />
-        <main id="main-content" className="flex-1">
+        <main id="main-content" className="min-h-0 flex-1">
           {children}
         </main>
         <Footer />

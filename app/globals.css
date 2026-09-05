@@ -35,7 +35,11 @@
   }
 
   body {
-    @apply bg-obsidian text-ice font-body antialiased;
+    @apply flex min-h-screen flex-col bg-obsidian text-ice font-body antialiased;
+  }
+
+  main {
+    @apply flex-1;
   }
 
   h1, h2, h3, h4 {

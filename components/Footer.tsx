@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-steel bg-carbon">
-      <div className="container-qv grid gap-10 py-14 md:grid-cols-4">
+    <footer className="flex-shrink-0 border-t border-steel bg-carbon">
+      <div className="container-qv grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:py-16">
         <div>
           <p className="font-display text-lg font-bold text-ice">QAVYON</p>
           <p className="mt-3 text-sm text-mist">Make complexity work.</p>
@@ -37,9 +37,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-steel py-6">
-        <div className="container-qv flex flex-col gap-2 text-xs text-mist md:flex-row md:items-center md:justify-between">
+        <div className="container-qv flex flex-col gap-3 text-xs text-mist sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-x-6">
           <p>© {new Date().getFullYear()} QAVYON. Tous droits réservés.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
             <Link href="/legal/mentions" className="hover:text-cyan">Mentions légales</Link>
             <Link href="/legal/privacy" className="hover:text-cyan">Confidentialité</Link>
           </div>
