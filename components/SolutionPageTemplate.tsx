@@ -2,8 +2,20 @@ import Link from "next/link";
 import { SolutionData } from "@/lib/solutions-data";
 import QavyonSystem from "@/components/QavyonSystem";
 import { INSIGHTS } from "@/lib/insights-data";
+import HeroImage from "@/components/HeroImage";
+import ScrollReveal from "@/components/ScrollReveal";
+
+const SOLUTION_VISUALS: Record<string, { src: string; alt: string }> = {
+  "erp-modernization-industrial": { src: "/images/ot-it-integration.jpg", alt: "Convergence entre les opérations industrielles et les systèmes informatiques" },
+  "data-ai": { src: "/images/industrial-ai.jpg", alt: "Cas d'usage d'intelligence artificielle industrielle en progression vers la production" },
+  "industrial-ai": { src: "/images/nearshore-acceleration.jpg", alt: "Connexion sobre entre l'Europe et le Maroc pour une équipe nearshore" },
+  "ot-it-integration": { src: "/images/about-header.jpg", alt: "Scène d'ingénierie industrielle dans un environnement technique" },
+  trust: { src: "/images/erp-modernization-industrial.png", alt: "Illustration industrielle sombre autour de la modernisation d'un ERP" },
+  "nearshore-acceleration": { src: "/images/data-ai.jpg", alt: "Flux de données industrielles convergeant dans un environnement sombre" },
+};
 
 export default function SolutionPageTemplate({ solution }: { solution: SolutionData }) {
+  const visual = SOLUTION_VISUALS[solution.slug];
   const faqJsonLd = solution.faq && solution.faq.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -48,17 +60,26 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
       </nav>
 
       {/* Hero */}
+      <ScrollReveal>
       <section className="container-qv py-12 md:py-16">
-        <h1 className="max-w-3xl text-4xl font-bold leading-[1.1] md:text-5xl lg:text-6xl text-ice">
-          {solution.problemTitle}
-        </h1>
-        <p className="mt-8 max-w-2xl text-lg text-mist leading-relaxed">
-          {solution.intro}
-        </p>
-        <Link href="/quickscan" className="btn-primary mt-8 inline-flex">Lancer mon QuickScan</Link>
+        <div className="grid items-center gap-10 lg:grid-cols-[.92fr_1.08fr] lg:gap-16">
+          <div>
+            <p className="eyebrow mb-4">{solution.name}</p>
+            <h1 className="max-w-3xl text-4xl font-bold leading-[1.1] text-ice md:text-5xl lg:text-6xl">
+              {solution.problemTitle}
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mist">
+              {solution.intro}
+            </p>
+            <Link href="/quickscan" className="btn-primary mt-8 inline-flex">Lancer mon QuickScan</Link>
+          </div>
+          {visual && <HeroImage src={visual.src} alt={visual.alt} className="w-full" />}
+        </div>
       </section>
+      </ScrollReveal>
 
       {/* Problèmes rencontrés */}
+      <ScrollReveal>
       <section className="border-t border-steel bg-carbon">
         <div className="container-qv py-16">
           <h2 className="text-2xl font-bold md:text-3xl text-ice">Problèmes rencontrés</h2>
@@ -72,16 +93,20 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
           </ul>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* Qavyon System */}
+      <ScrollReveal>
       <section className="border-t border-steel">
         <div className="container-qv py-16">
           <p className="eyebrow mb-3 text-cyan">Où cela se situe dans le système</p>
           <QavyonSystem systemPath={solution.systemPath} scrollytelling={false} />
         </div>
       </section>
+      </ScrollReveal>
 
       {/* Notre approche & Ce que nous faisons */}
+      <ScrollReveal>
       <section className="border-t border-steel bg-carbon">
         <div className="container-qv py-16 grid gap-12 md:grid-cols-2">
           <div>
@@ -112,9 +137,11 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* Cas d'usage */}
       {solution.useCases && solution.useCases.length > 0 && (
+        <ScrollReveal>
         <section className="border-t border-steel">
           <div className="container-qv py-16">
             <h2 className="text-2xl font-bold md:text-3xl text-ice">Cas d'usage</h2>
@@ -127,10 +154,12 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
             </div>
           </div>
         </section>
+        </ScrollReveal>
       )}
 
       {/* FAQ */}
       {solution.faq && solution.faq.length > 0 && (
+        <ScrollReveal>
         <section className="border-t border-steel bg-carbon">
           <div className="container-qv py-16">
             <h2 className="text-2xl font-bold md:text-3xl text-ice">Questions fréquentes</h2>
@@ -144,10 +173,12 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
             </div>
           </div>
         </section>
+        </ScrollReveal>
       )}
 
       {/* Articles liés */}
       {related.length > 0 && (
+        <ScrollReveal>
         <section className="border-t border-steel bg-carbon">
           <div className="container-qv py-16">
             <h2 className="text-2xl font-bold md:text-3xl text-ice">Articles liés</h2>
@@ -165,9 +196,11 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
             </div>
           </div>
         </section>
+        </ScrollReveal>
       )}
 
       {/* CTA Final */}
+      <ScrollReveal>
       <section className="border-t border-steel text-center">
         <div className="container-qv py-20 md:py-28">
           <h2 className="text-2xl font-bold md:text-3xl text-ice">On en parle ?</h2>
@@ -177,6 +210,7 @@ export default function SolutionPageTemplate({ solution }: { solution: SolutionD
           </div>
         </div>
       </section>
+      </ScrollReveal>
     </>
   );
 }

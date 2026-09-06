@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { submitLead, Lead } from "@/lib/hubspot";
+import { notifyNewLead, submitLead, Lead } from "@/lib/hubspot";
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -42,5 +42,6 @@ export async function POST(req: NextRequest) {
   };
 
   const result = await submitLead(lead);
+  void notifyNewLead(lead, lead.source);
   return NextResponse.json({ ok: true, ...result }, { status: 200 });
 }

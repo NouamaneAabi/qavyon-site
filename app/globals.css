@@ -66,6 +66,15 @@
     }
   }
 
+  @keyframes borderGlow {
+    0%, 100% { opacity: 0.35; box-shadow: 0 0 0 rgba(25, 211, 197, 0); }
+    50% { opacity: 0.9; box-shadow: 0 0 24px rgba(25, 211, 197, 0.14); }
+  }
+
+  .animate-border-glow {
+    animation: borderGlow 3.5s ease-in-out infinite;
+  }
+
   .hero-convergence {
     will-change: transform, opacity;
   }
@@ -96,6 +105,10 @@
       animation: none !important;
       opacity: 0.6 !important;
       transform: none !important;
+    }
+
+    .animate-border-glow {
+      animation: none !important;
     }
   }
 }

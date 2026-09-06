@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { runQuickScan, QuickScanInput } from "@/lib/quickscan-engine";
-import { submitLead } from "@/lib/hubspot";
+import { notifyNewLead, submitLead } from "@/lib/hubspot";
 
 const MATURITY_VALUES = new Set(["0", "1", "2", "3"]);
 const CONSTRAINT_VALUES = new Set(["budget", "time", "internal-skills", "change-management"]);
@@ -58,12 +58,24 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const leadResult = await submitLead({
+    const lead = {
       firstName: "QuickScan",
       email: body.email,
       consent: body.consent,
       source: "quickscan",
-    });
+      meta: {
+        message: body.problemDescription,
+        sector: body.sector,
+        erp: body.erp,
+        data: body.data,
+        ai: body.ai,
+        otIt: body.otIt,
+        constraint: body.constraint,
+        horizon: body.horizon,
+      },
+    };
+    const leadResult = await submitLead(lead);
+    void notifyNewLead(lead, "quickscan");
 
     if (!leadResult.delivered && leadResult.persisted) {
       console.warn("[fallback] HubSpot indisponible, lead sauvegardé dans Vercel KV :", body.email);

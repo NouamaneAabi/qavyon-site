@@ -10,6 +10,15 @@ export interface Lead {
   meta?: Record<string, unknown>;
 }
 
+function escapeHtml(value: unknown) {
+  return String(value ?? "-")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export interface FailedLeadRecord extends Lead {
   id: string;
   failedAt: string;
@@ -123,6 +132,53 @@ export async function sendFailedLeadAlert(
     return true;
   } catch (err) {
     console.error("[hubspot] Exception lors de l'envoi d'alerte email.", err);
+    return false;
+  }
+}
+
+export async function notifyNewLead(lead: Lead, source: string): Promise<boolean> {
+  const notificationEmail = process.env.CONTACT_NOTIFICATION_EMAIL;
+  const resendApiKey = process.env.RESEND_API_KEY;
+
+  if (!notificationEmail || !resendApiKey) {
+    console.info("[hubspot] Notification email non configurée : CONTACT_NOTIFICATION_EMAIL / RESEND_API_KEY absents.");
+    return false;
+  }
+
+  const message = lead.meta?.message ?? lead.meta?.need ?? lead.meta?.problemDescription ?? "-";
+
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${resendApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "onboarding@resend.dev",
+        to: [notificationEmail],
+        subject: `Nouvelle soumission — ${source}`,
+        html: `
+          <p>Une nouvelle soumission a été reçue via le formulaire « ${escapeHtml(source)} ».</p>
+          <ul>
+            <li>Nom : ${escapeHtml(lead.firstName)}</li>
+            <li>Email : ${escapeHtml(lead.email)}</li>
+            <li>Société : ${escapeHtml(lead.company)}</li>
+            <li>Message / besoin : ${escapeHtml(message)}</li>
+          </ul>
+        `,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error("[hubspot] Échec de la notification de nouvelle soumission.", response.status, await response.text());
+      return false;
+    }
+
+    console.info("[hubspot] Notification de nouvelle soumission envoyée.", lead.email);
+    return true;
+  } catch (err) {
+    console.error("[hubspot] Exception lors de la notification de nouvelle soumission.", err);
     return false;
   }
 }
