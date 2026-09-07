@@ -36,14 +36,17 @@ export const metadata: Metadata = {
     description:
       "QAVYON connecte les systèmes complexes (ERP, Data, IA, OT) des industriels européens mid-market.",
     url: "https://qavyon.com",
-    images: [{ url: "/og-default.png", width: 1200, height: 630, alt: "QAVYON — Make complexity work." }],
+    images: [{ url: "/Logo/qavyon-logo-horizontal.svg", width: 869, height: 104, alt: "QAVYON — Make complexity work." }],
   },
   twitter: {
     card: "summary_large_image",
     title: "QAVYON — Make complexity work.",
     description:
       "QAVYON connecte les systèmes complexes (ERP, Data, IA, OT) des industriels européens mid-market.",
-    images: ["/og-default.png"],
+    images: ["/Logo/qavyon-logo-horizontal.svg"],
+  },
+  icons: {
+    icon: "/Logo/qavyon-favicon.svg",
   },
   robots: {
     index: process.env.NEXT_PUBLIC_ENV === "production",

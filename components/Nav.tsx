@@ -20,8 +20,10 @@ export default function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-steel bg-obsidian/90 backdrop-blur">
       <div className="container-qv flex h-16 items-center justify-between">
-        <Link href="/" className="font-display text-lg font-bold tracking-wide text-ice">
-          QAVYON
+        <Link href="/" className="flex items-center">
+          <span className="font-display text-xl font-bold tracking-tight text-ice">
+            <span className="relative">Q<span className="absolute -right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-cyan" />AVYON</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Navigation principale">

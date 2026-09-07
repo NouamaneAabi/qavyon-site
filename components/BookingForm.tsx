@@ -5,7 +5,7 @@ import { track } from "@/lib/tracking";
 
 export default function BookingForm() {
   const [mounted, setMounted] = useState(false);
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL;
+  const [calendlyUrl, setCalendlyUrl] = useState<string | null>(null);
 
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,6 +16,8 @@ export default function BookingForm() {
 
   useEffect(() => {
     setMounted(true);
+    const url = process.env.NEXT_PUBLIC_CALENDLY_URL;
+    if (url) setCalendlyUrl(url);
   }, []);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -51,7 +53,7 @@ export default function BookingForm() {
       <iframe
         src={calendlyUrl}
         title="Calendrier de réservation QAVYON"
-        className="h-[700px] w-full rounded-lg border border-steel bg-carbon"
+        className="h-[800px] w-full rounded-lg border border-steel bg-carbon"
         loading="lazy"
       />
     );

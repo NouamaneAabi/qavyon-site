@@ -5,7 +5,9 @@ export default function Footer() {
     <footer className="flex-shrink-0 border-t border-steel bg-carbon">
       <div className="container-qv grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:py-16">
         <div>
-          <p className="font-display text-lg font-bold text-ice">QAVYON</p>
+          <span className="font-display text-lg font-bold tracking-tight text-ice">
+            <span className="relative">Q<span className="absolute -right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-cyan" />AVYON</span>
+          </span>
           <p className="mt-3 text-sm text-mist">Make complexity work.</p>
         </div>
         <div>
