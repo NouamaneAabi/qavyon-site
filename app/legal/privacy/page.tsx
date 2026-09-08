@@ -6,7 +6,7 @@ export default function PrivacyPage() {
       <h1 className="text-3xl font-bold mb-8">Politique de confidentialité</h1>
       <div className="space-y-6 text-mist leading-relaxed">
         <p>
-          <strong>[À VALIDER PAR QAVYON - Informations de l'entreprise manquantes (Nom juridique, Adresse, SIREN)]</strong>
+          QAVYON est une société en cours d'immatriculation. Les informations légales complètes (adresse, SIREN) seront publiées dès leur disponibilité.
         </p>
         <p>
           La présente politique de confidentialité décrit la manière dont nous collectons, utilisons et protégeons vos données personnelles lorsque vous utilisez le site QAVYON (notamment les formulaires de contact et le QuickScan), conformément au Règlement Général sur la Protection des Données (RGPD).
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           <li>Vous envoyer les résultats de votre diagnostic QuickScan.</li>
           <li>Vous recontacter suite à une demande de rendez-vous ou d'information.</li>
         </ul>
-        <p>La base légale de ce traitement est votre consentement explicite recueilli via nos formulaires.</p>
+        <p>La base légale de ces traitements est votre consentement explicite recueilli via nos formulaires. Nous pouvons également nous appuyer sur notre intérêt légitime pour répondre à vos demandes et assurer le fonctionnement et la sécurité du site.</p>
 
         <h2 className="text-xl font-semibold text-ice mt-8 mb-4">2. Sous-traitance et partage des données</h2>
         <p>
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
           <li>Droit d'opposition au traitement.</li>
         </ul>
         <p>
-          Pour exercer ces droits, vous pouvez contacter notre Délégué à la Protection des Données (DPO) à l'adresse suivante : <strong>[Email de contact DPO à fournir par le client]</strong>.
+          Pour exercer ces droits, vous pouvez contacter notre Délégué à la Protection des Données (DPO) à l'adresse suivante : <strong>contact@qavyon.com</strong>.
         </p>
       </div>
     </section>
