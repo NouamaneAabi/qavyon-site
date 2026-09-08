@@ -28,6 +28,9 @@ export default function Footer() {
             <li><Link href="/how-we-work" className="hover:text-cyan">How We Work</Link></li>
             <li><Link href="/about" className="hover:text-cyan">About</Link></li>
             <li><Link href="/insights" className="hover:text-cyan">Insights</Link></li>
+            <li><a href="https://www.linkedin.com/company/qavyon/home/" target="_blank" rel="noopener noreferrer" className="text-mist hover:text-cyan transition-colors">
+              LinkedIn
+            </a></li>
           </ul>
         </div>
         <div>
