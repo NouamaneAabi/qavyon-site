@@ -3,7 +3,7 @@ import { SOLUTIONS_LIST } from "@/lib/solutions-data";
 import { INSIGHTS } from "@/lib/insights-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://qavyon.com";
+  const baseUrl = "https://qavyon.com";
 
   const routes: MetadataRoute.Sitemap = [
     {
