@@ -105,7 +105,7 @@ export async function sendFailedLeadAlert(
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "onboarding@resend.dev",
+        from: "QAVYON <noreply@qavyon.com>",
         to: [adminEmail],
         subject: `Alerte lead en échec — ${lead.source}`,
         html: `
@@ -156,7 +156,7 @@ export async function notifyNewLead(lead: Lead, source: string): Promise<boolean
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "onboarding@resend.dev",
+        from: "QAVYON <noreply@qavyon.com>",
         to: [notificationEmail],
         subject: `Nouvelle soumission — ${source}`,
         html: `
