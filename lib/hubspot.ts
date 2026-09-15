@@ -148,6 +148,7 @@ export async function notifyNewLead(lead: Lead, source: string): Promise<boolean
   const message = lead.meta?.message ?? lead.meta?.need ?? lead.meta?.problemDescription ?? "-";
 
   try {
+    console.log("[notifyNewLead] Envoi à :", process.env.CONTACT_NOTIFICATION_EMAIL);
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -170,6 +171,7 @@ export async function notifyNewLead(lead: Lead, source: string): Promise<boolean
       }),
     });
 
+    console.log("[notifyNewLead] Réponse Resend :", response.status);
     if (!response.ok) {
       console.error("[hubspot] Échec de la notification de nouvelle soumission.", response.status, await response.text());
       return false;
