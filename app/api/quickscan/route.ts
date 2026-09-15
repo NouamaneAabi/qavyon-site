@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
       },
     };
     const leadResult = await submitLead(lead);
-    void notifyNewLead(lead, "quickscan");
+    await notifyNewLead(lead, "quickscan");
 
     if (!leadResult.delivered && leadResult.persisted) {
       console.warn("[fallback] HubSpot indisponible, lead sauvegardé dans Vercel KV :", body.email);

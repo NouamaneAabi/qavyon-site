@@ -172,8 +172,10 @@ export async function notifyNewLead(lead: Lead, source: string): Promise<boolean
     });
 
     console.log("[notifyNewLead] Réponse Resend :", response.status);
+    const body = await response.text();
+    console.log("[notifyNewLead] Body :", body);
     if (!response.ok) {
-      console.error("[hubspot] Échec de la notification de nouvelle soumission.", response.status, await response.text());
+      console.error("[hubspot] Échec de la notification de nouvelle soumission.", response.status, body);
       return false;
     }
 
