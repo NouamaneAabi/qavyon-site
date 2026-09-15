@@ -34,6 +34,7 @@ export async function POST(req: NextRequest) {
   };
 
   const result = await submitLead(lead);
-  void notifyNewLead(lead, "contact-nearshore");
+  console.log("[contact-nearshore] notifyNewLead appelé pour", lead.email);
+  await notifyNewLead(lead, "contact-nearshore");
   return NextResponse.json({ ok: true, ...result }, { status: 200 });
 }
