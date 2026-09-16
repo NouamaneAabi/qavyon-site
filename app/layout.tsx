@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
@@ -73,6 +74,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+      <head>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="cae14ac7-9b68-4c72-90bb-8ad33fdc2e33"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="signal-grid-bg relative flex min-h-screen flex-col">
         <GridParticles />
         <div className="relative z-10 flex min-h-screen flex-1 flex-col">
