@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -91,6 +92,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
